@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="main.css" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <script src="html2canvas.min.js"></script>
+  </head>
+  <body>
+    <main>
+      <section class="container">
+        <div class="election" style="width: 100%">
+          <div class="headline_container">
+            <h1 class="hero_tagline">
+              Empower Your Election Strategy: Predict Seat Wins with Ease!
+            </h1>
+
+            <select name="candidate" id="candidate" style="margin-left: 0.5rem">
+              <option value="bjp">BJP</option>
+              <option value="congress">Congress</option>
+            </select>
+          </div>
+
+          <table>
+            <thead>
+              <tr>
+                <th>State Name</th>
+                <th>Total Seat</th>
+                <th>Predictable Seat</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <img src="/images/andhra-pradesh.jpg" alt="" />
+                  <span style="display: block">Andra Pradesh</span>
+                </td>
+                <td>25</td>
+                <td>
+                  <input
+                    type="number"
+                    max="25"
+                    min="0"
+                    value="0"
+                    id="predict_input"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <img src="/images/arunachal-pradesh.jpg" alt="" />
+                  <span style="display: block">Arunachal Pradesh</span>
+                </td>
+                <td>2</td>
+                <td>
+                  <input
+                    type="number"
+                    max="2"
+                    min="0"
+                    value="0"
+                    id="predict_input"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <img src="/images/assam.jpg" alt="" />
+                  <span style="display: block">Assam</span>
+                </td>
+                <td>14</td>
+                <td>
+                  <input
+                    type="number"
+                    max="14"
+                    min="0"
+                    value="0"
+                    id="predict_input"
+                  />
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <img src="/images/bihar.jpg" alt="" />
+                  <span style="display: block">Bihar</span>
+                </td>
+                <td>40</td>
+                <td>
+                  <input
+                    type="number"
+                    max="40"
+                    min="0"
+                    value="0"
+                    id="predict_input"
+                  />
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <img src="/images/chhattisgarh.jpg" alt="" />
+                  <span style="display: block">Chhattisgarh</span>
+                </td>
+                <td>11</td>
+                <td>
+                  <input
+                    type="number"
+                    max="11"
+                    min="0"
+                    value="0"
+                    id="predict_input"
+                  />
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <img src="/images/goa.jpg" alt="" />
+                  <span style="display: block">Goa</span>
+                </td>
+                <td>2</td>
+                <td>
+                  <input
+                    type="number"
+                    max="2"
+                    min="0"
+                    value="0"
+                    id="predict_input"
+                  />
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <img src="/images/Gujarat.jpg" alt="" />
+                  <span style="display: block">Gujarat</span>
+                </td>
+                <td>26</td>
+                <td>
+                  <input
+                    type="number"
+                    max="26"
+                    min="0"
+                    value="0"
+                    id="predict_input"
+                  />
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <img src="/images/haryana.jpg" alt="" />
+                  <span style="display: block">Haryana</span>
+                </td>
+                <td>10</td>
+                <td>
+                  <input
+                    type="number"
+                    max="10"
+                    min="0"
+                    value="0"
+                    id="predict_input"
+                  />
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <img src="/images/himachal-pradesh.jpg" alt="" />
+                  <span style="display: block">Himachal Pradesh</span>
+                </td>
+                <td>4</td>
+                <td>
+                  <input
+                    type="number"
+                    max="4"
+                    min="0"
+                    value="0"
+                    id="predict_input"
+                  />
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <img src="/images/jharkhand.jpg" alt="" />
+                  <span style="display: block">Jharkhand</span>
+                </td>
+                <td>14</td>
+                <td>
+                  <input
+                    type="number"
+                    max="14"
+                    min="0"
+                    value="0"
+                    id="predict_input"
+                  />
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <img src="/images/karnataka.jpg" alt="" />
+                  <span style="display: block">Karnataka</span>
+                </td>
+                <td>28</td>
+                <td>
+                  <input
+                    type="number"
+                    max="28"
+                    min="0"
+                    value="0"
+                    id="predict_input"
+                  />
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <img src="/images/Kerala.png" alt="" />
+                  <span style="display: block">Kerala</span>
+                </td>
+                <td>20</td>
+                <td>
+                  <input
+                    type="number"
+                    max="20"
+                    min="0"
+                    value="0"
+                    id="predict_input"
+                  />
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <img src="/images/madhya-pradesh.jpg" alt="" />
+                  <span style="display: block">Madhya Pradesh</span>
+                </td>
+                <td>29</td>
+                <td>
+                  <input
+                    type="number"
+                    max="29"
+                    min="0"
+                    value="0"
+                    id="predict_input"
+                  />
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <img src="/images/maharashtra.gif" alt="" />
+                  <span style="display: block">Maharashtra</span>
+                </td>
+                <td>48</td>
+                <td>
+                  <input
+                    type="number"
+                    max="48"
+                    min="0"
+                    value="0"
+                    id="predict_input"
+                  />
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <img src="/images/Manipur.jpg" alt="" />
+                  <span style="display: block">Manipur</span>
+                </td>
+                <td>2</td>
+                <td>
+                  <input
+                    type="number"
+                    max="2"
+                    min="0"
+                    value="0"
+                    id="predict_input"
+                  />
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <img src="/images/meghalaya.jpg" alt="" />
+                  <span style="display: block">Meghalaya</span>
+                </td>
+                <td>2</td>
+                <td>
+                  <input
+                    type="number"
+                    max="2"
+                    min="0"
+                    value="0"
+                    id="predict_input"
+                  />
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <img src="/images/Mizoram.gif" alt="" />
+                  <span style="display: block">Mizoram</span>
+                </td>
+                <td>1</td>
+                <td>
+                  <input
+                    type="number"
+                    max="1"
+                    min="0"
+                    value="0"
+                    id="predict_input"
+                  />
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <img src="/images/nagaland.jpg" alt="" />
+                  <span style="display: block">Nagaland</span>
+                </td>
+                <td>1</td>
+                <td>
+                  <input
+                    type="number"
+                    max="1"
+                    min="0"
+                    value="0"
+                    id="predict_input"
+                  />
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <img src="/images/odisha.jpg" alt="" />
+                  <span style="display: block">Odisha</span>
+                </td>
+                <td>21</td>
+                <td>
+                  <input
+                    type="number"
+                    max="21"
+                    min="0"
+                    value="0"
+                    id="predict_input"
+                  />
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <img src="/images/punjab.jpg" alt="" />
+                  <span style="display: block">Punjab</span>
+                </td>
+                <td>13</td>
+                <td>
+                  <input
+                    type="number"
+                    max="13"
+                    min="0"
+                    value="0"
+                    id="predict_input"
+                  />
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <img src="/images/rajasthan.jpg" alt="" />
+                  <span style="display: block">Rajasthan</span>
+                </td>
+                <td>25</td>
+                <td>
+                  <input
+                    type="number"
+                    max="25"
+                    min="0"
+                    value="0"
+                    id="predict_input"
+                  />
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <img src="/images/sikkim.jpg" alt="" />
+                  <span style="display: block">Sikkim</span>
+                </td>
+                <td>1</td>
+                <td>
+                  <input
+                    type="number"
+                    max="1"
+                    min="0"
+                    value="0"
+                    id="predict_input"
+                  />
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <img src="/images/tamil-nadu.jpg" alt="" />
+                  <span style="display: block">Tamil Nadu</span>
+                </td>
+                <td>39</td>
+                <td>
+                  <input
+                    type="number"
+                    max="39"
+                    min="0"
+                    value="0"
+                    id="predict_input"
+                  />
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <img src="/images/telangana.jpg" alt="" />
+                  <span style="display: block">Telangana</span>
+                </td>
+                <td>17</td>
+                <td>
+                  <input
+                    type="number"
+                    max="17"
+                    min="0"
+                    value="0"
+                    id="predict_input"
+                  />
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <img src="/images/tripura.jpg" alt="" />
+                  <span style="display: block">Tripura</span>
+                </td>
+                <td>2</td>
+                <td>
+                  <input
+                    type="number"
+                    max="2"
+                    min="0"
+                    value="0"
+                    id="predict_input"
+                  />
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <img src="/images/uttar-pradesh.jpg" alt="" />
+                  <span style="display: block">Uttar Pradesh</span>
+                </td>
+                <td>80</td>
+                <td>
+                  <input
+                    type="number"
+                    max="80"
+                    min="0"
+                    value="0"
+                    id="predict_input"
+                  />
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <img src="/images/uttarakhand.jpg" alt="" />
+                  <span style="display: block">Uttarakhand</span>
+                </td>
+                <td>5</td>
+                <td>
+                  <input
+                    type="number"
+                    max="5"
+                    min="0"
+                    value="0"
+                    id="predict_input"
+                  />
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <img src="/images/west-bengal.jpg" alt="" />
+                  <span style="display: block">West Bengal</span>
+                </td>
+                <td>42</td>
+                <td>
+                  <input
+                    type="number"
+                    max="42"
+                    min="0"
+                    value="0"
+                    id="predict_input"
+                  />
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <img src="/images/Andaman-Nicobar.jpg" alt="" />
+                  <span style="display: block"
+                    >Andaman and Nicobar Islands</span
+                  >
+                </td>
+                <td>1</td>
+                <td>
+                  <input
+                    type="number"
+                    max="1"
+                    min="0"
+                    value="0"
+                    id="predict_input"
+                  />
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <img src="/images/chandigarh.jpg" alt="" />
+                  <span style="display: block">Chandigarh</span>
+                </td>
+                <td>1</td>
+                <td>
+                  <input
+                    type="number"
+                    max="1"
+                    min="0"
+                    value="0"
+                    id="predict_input"
+                  />
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <img
+                    src="/images/dadra-and-nagar-haveli-and-daman-and-diu.jpg"
+                    alt=""
+                  />
+                  <span style="display: block"
+                    >Dadra and Nagar Haveli and Daman and Diu</span
+                  >
+                </td>
+                <td>2</td>
+                <td>
+                  <input
+                    type="number"
+                    max="2"
+                    min="0"
+                    value="0"
+                    id="predict_input"
+                  />
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <img src="/images/delhi.jpg" alt="" />
+                  <span style="display: block">Delhi</span>
+                </td>
+                <td>7</td>
+                <td>
+                  <input
+                    type="number"
+                    max="7"
+                    min="0"
+                    value="0"
+                    id="predict_input"
+                  />
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <img src="/images/Jammu-Kashmir.jpg" alt="" />
+                  <span style="display: block">Jammu and Kashmir</span>
+                </td>
+                <td>5</td>
+                <td>
+                  <input
+                    type="number"
+                    max="5"
+                    min="0"
+                    value="0"
+                    id="predict_input"
+                  />
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <img src="/images/ladakh.jpg" alt="" />
+                  <span style="display: block">Ladakh</span>
+                </td>
+                <td>1</td>
+                <td>
+                  <input
+                    type="number"
+                    max="1"
+                    min="0"
+                    value="0"
+                    id="predict_input"
+                  />
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <img src="/images/lakshadweep.jpg" alt="" />
+                  <span style="display: block">Lakshadweep</span>
+                </td>
+                <td>1</td>
+                <td>
+                  <input
+                    type="number"
+                    max="1"
+                    min="0"
+                    value="0"
+                    id="predict_input"
+                  />
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <img src="/images/puducherry.jpg" alt="" />
+                  <span style="display: block">Puducherry</span>
+                </td>
+                <td>1</td>
+                <td>
+                  <input
+                    type="number"
+                    max="1"
+                    min="0"
+                    value="0"
+                    id="predict_input"
+                  />
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="result_container">
+            <p class="result">
+              <span class="candidate_name">BJP</span> Result :
+              <span class="result_predict">0</span> / 543
+            </p>
+
+            <p class="by">
+              Predict by: <a href="https://predict272.com/">predict272.com</a>
+            </p>
+          </div>
+        </div>
+
+        <div class="download_container">
+          <button>Download as PDF</button>
+        </div>
+      </section>
+    </main>
+
+    <script defer src="app.js"></script>
+  </body>
+</html>
