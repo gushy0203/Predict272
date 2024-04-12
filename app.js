@@ -4,28 +4,31 @@ const candidate = document.querySelector("#candidate");
 const candidateName = document.querySelector(".candidate_name");
 const inputValues = document.querySelectorAll("#predict_input");
 const result = document.querySelector(".result_predict");
-const downloadPDFBtn = document.querySelectorAll(
+const downloadImageBtn = document.querySelectorAll(
   ".download_container button"
 )[0];
+const downloadPDFBtn = document.querySelectorAll(
+  ".download_container button"
+)[1];
 const table = document.querySelector(".election");
 
 let total = 0;
 
-// downloadImageBtn.addEventListener("click", async (e) => {
-//   const canvas = await html2canvas(table);
+downloadImageBtn.addEventListener("click", async (e) => {
+  const canvas = await html2canvas(table);
 
-//   const imgData = canvas.toDataURL("image/png");
+  const imgData = canvas.toDataURL("image/png");
 
-//   // Create a link element
-//   const link = document.createElement("a");
-//   link.href = imgData;
+  // Create a link element
+  const link = document.createElement("a");
+  link.href = imgData;
 
-//   // Set the download attribute
-//   link.download = "table.png";
+  // Set the download attribute
+  link.download = "table.png";
 
-//   // Trigger the download
-//   link.click();
-// });
+  // Trigger the download
+  link.click();
+});
 
 candidate.addEventListener("change", (e) => {
   console.log(e.target.value);
