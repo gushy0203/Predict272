@@ -24,7 +24,7 @@ downloadImageBtn.addEventListener("click", async (e) => {
   link.href = imgData;
 
   // Set the download attribute
-  link.download = "table.png";
+  link.download = "result.png";
 
   // Trigger the download
   link.click();
@@ -44,7 +44,7 @@ downloadPDFBtn.addEventListener("click", (e) => {
   // Convert table to a data URL representation
   doc.html(table, {
     callback: function (doc) {
-      doc.save("table.pdf");
+      doc.save("result.pdf");
     },
   });
 });
